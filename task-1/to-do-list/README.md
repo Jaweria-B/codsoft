@@ -2,6 +2,10 @@
 
 Welcome to the To-Do List App! This app allows you to manage your tasks efficiently in a simple and intuitive way. Keep track of your tasks, set priorities, and mark them as done when completed.
 
+## 💡 Live Demo
+
+Try out the live demo [here](https://to-do-list-jb.streamlit.app/).
+
 ## Features
 
 ✅ Add tasks with customizable priorities and due dates  
