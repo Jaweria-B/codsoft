@@ -45,3 +45,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+    import streamlit as st
+
+st.markdown("""<div style='text-align: center;'>
+
+          
+Made By **_Jaweria Batool_**
+
+For more information about how the app works, please check out the [GitHub README](https://github.com/Jaweria-B/codsoft) file.
+
+</div>""", unsafe_allow_html=True)
+
