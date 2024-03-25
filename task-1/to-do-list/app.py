@@ -2,7 +2,7 @@ import streamlit as st
 from datetime import datetime
 
 def main():
-    st.set_page_config(layout="wide")  # Set page layout to wide
+    st.set_page_config(page_title="To Do List", layout="wide", page_icon=":memo:")  # Set page layout to wide
 
     st.markdown("<h1 style='padding-left: 280px;'>📝 To-Do List App</h1>", unsafe_allow_html=True)
 
