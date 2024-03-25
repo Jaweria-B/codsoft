@@ -29,7 +29,7 @@ def calculate(num1, num2, operation):
         return "Invalid operation"
 
 def main():
-    st.title("Scientific Calculator")
+    st.title("🧮 Scientific Calculator")
 
     num1 = st.number_input("Enter the first number:")
     num2 = st.number_input("Enter the second number:", value=2.0, key="second_number")
@@ -77,6 +77,17 @@ def main():
     if result is not None:
         st.success(f"Result: {result}")
 
+        st.divider()
+        st.write(
+                """
+                Made with ❤️ By **_Jaweria Batool_** 
+                """
+            )
+
+        # link to GitHub README file
+        st.write("For more information about how the app works, please check out the [GitHub README](https://github.com/Jaweria-B/codsoft/tree/main/task-2/calculator) file.")
+
 if __name__ == "__main__":
     st.set_page_config(page_title="Calculator", page_icon="🧮")
+    
     main()
