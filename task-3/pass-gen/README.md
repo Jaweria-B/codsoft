@@ -33,8 +33,15 @@ Welcome to the Password Generator! This application allows you to generate stron
 3. Run the app using the command `streamlit run app.py`.
 4. Access the app in your browser at `http://localhost:8501`.
 
-## Feedback 💬
+## Live Demo 🌐
 
-Your feedback is valuable! If you encounter any issues or have suggestions for improvements, feel free to [open an issue](<link to GitHub issues>) on GitHub.
+For a live demo of the Scientific Calculator, visit [here](https://password-generator-jb.streamlit.app/).
+
+
+## Author 📝
+
+This Scientific Calculator app was developed by [Jaweria Batool](https://www.linkedin.com/in/jaweria-batool/) during an internship at Codsoft.
+
+---
 
 Enjoy generating secure passwords with the Password Generator app! 🔐✨
