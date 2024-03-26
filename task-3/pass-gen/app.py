@@ -21,7 +21,7 @@ def display_strength(password):
 
 def main():
     st.set_page_config(page_title="Password Generator", page_icon="🔐")
-    
+
     st.title("🔐 Password Generator 🔐")
 
     # User input for password length
@@ -45,3 +45,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    st.divider()
+    st.write(
+            """
+            Made with ❤️ By **_Jaweria Batool_** 
+            """
+        )
+
+    # link to GitHub README file
+    st.write("For more information about how the app works, please check out the [GitHub README](https://github.com/Jaweria-B/codsoft/tree/main/task-3/pass-gen) file.")
+
