@@ -9,6 +9,12 @@ images = {
     "scissors": "./assets/scissors.png"   
 }
 
+# Initialize session state for scores
+if 'user_score' not in st.session_state:
+    st.session_state.user_score = 0
+if 'computer_score' not in st.session_state:
+    st.session_state.computer_score = 0
+
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
         st.warning("It's a tie! 😊")
@@ -16,8 +22,10 @@ def determine_winner(user_choice, computer_choice):
          (user_choice == 'scissors' and computer_choice == 'paper') or \
          (user_choice == 'paper' and computer_choice == 'rock'):
         st.success("You win! 🎉")
+        st.session_state.user_score += 1
     else:
         st.error("You lose! 😔")
+        st.session_state.computer_score += 1
 
 def main():
     st.set_page_config(page_title="Rock-Paper-Scissors", page_icon="./assets/rock-paper-scissors.png")  # Set page title and icon
@@ -50,6 +58,25 @@ def main():
     if user_choice:
         determine_winner(user_choice, computer_choice)
 
+    # Fourth row: Scores and Play Again button
+    st.write("Scores")
+    st.write(f"Your Score: {st.session_state.user_score}")
+    st.write(f"Computer's Score: {st.session_state.computer_score}")
+
+    play_again = st.button("Play Again")
+    if play_again:
+        st.session_state.user_score = 0
+        st.session_state.computer_score = 0
 
 if __name__ == "__main__":
     main()
+
+    st.divider()
+    st.write(
+            """
+            Made with ❤️ By **_Jaweria Batool_** 
+            """
+        )
+
+    # link to GitHub README file
+    st.write("For more information about how the app works, please check out the [GitHub README](https://github.com/Jaweria-B/codsoft/tree/main/task-4/rps-game) file.")
