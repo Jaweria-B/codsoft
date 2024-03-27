@@ -4,9 +4,9 @@ import time
 
 # Dictionary containing image paths for each choice
 images = {
-    "rock": "./assets/rock.png",      
-    "paper": "./assets/paper.png",     
-    "scissors": "./assets/scissors.png"   
+    "rock": "task-4\rps-game\assets\rock.png",      
+    "paper": "task-4\rps-game\assets\paper.png",     
+    "scissors": "task-4\rps-game\assets\scissors.png"   
 }
 
 # Initialize session state for scores
@@ -33,8 +33,7 @@ def main():
 
     # First row: User's choice and computer's choice
     col1, col2 = st.columns(2)
-    col1.markdown(f"### Your Choice: 👤")
-    user_choice = col1.radio("", ["rock", "paper", "scissors"], key="user_choice")
+    user_choice = col1.radio(f"### Your Choice: 👤", ["rock", "paper", "scissors"], key="user_choice")
     
     with col2:
         if user_choice:
