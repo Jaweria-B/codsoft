@@ -4,9 +4,9 @@ import time
 
 # Dictionary containing image paths for each choice
 images = {
-    "rock": "task-4\rps-game\assets\rock.png",      
-    "paper": "task-4\rps-game\assets\paper.png",     
-    "scissors": "task-4\rps-game\assets\scissors.png"   
+    "rock": "./assets/rock.png",      
+    "paper": "./assets/paper.png",     
+    "scissors": "./assets/scissors.png"   
 }
 
 # Initialize session state for scores
