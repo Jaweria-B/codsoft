@@ -54,14 +54,14 @@ def main():
             col2.image(images[computer_choice], caption="Computer's Choice", use_column_width=True, width=150 )
 
     # Third row: Result of the game
-    st.write("Result")
+    st.write("#### Result")
     if user_choice:
         determine_winner(user_choice, computer_choice)
 
     # Fourth row: Scores and Play Again button
-    st.write("Scores")
-    st.write(f"Your Score: {st.session_state.user_score}")
-    st.write(f"Computer's Score: {st.session_state.computer_score}")
+    st.write("#### Scores:")
+    st.write(f"Your Score: {st.session_state.user_score} 🏆")
+    st.write(f"Computer's Score: {st.session_state.computer_score} 💻")
 
     play_again = st.button("Play Again")
     if play_again:
