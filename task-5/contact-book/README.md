@@ -2,6 +2,10 @@
 
 The Contact Book app is a simple yet powerful tool to manage your contacts effectively. It provides a user-friendly interface to perform various operations such as adding, viewing, searching, updating, and deleting contacts. With this app, you can keep your contacts organized and accessible at your fingertips!
 
+## 🚀 Live Demo
+
+You can access the live demo of the app [here](https://contact-book-jb.streamlit.app/). 🌟
+
 ## 🚀 Features
 
 ### Add Contact
