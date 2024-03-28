@@ -1,20 +1,13 @@
 import streamlit as st
 import random
 import time
-import os
 
-# Function to read images from the directory
-def read_images_from_dir(directory):
-    images = {}
-    for filename in os.listdir(directory):
-        if filename.endswith(".png"):
-            name = filename.split('.')[0]
-            images[name] = os.path.join(directory, filename)
-    return images
-
-# Directory containing image paths for each choice
-image_directory = "./assets/"
-images = read_images_from_dir(image_directory)
+# Dictionary containing image paths for each choice
+images = {
+    "rock": "/assets/rock.png",      
+    "paper": "/assets/paper.png",     
+    "scissors": "/assets/scissors.png"   
+}
 
 # Initialize session state for scores
 if 'user_score' not in st.session_state:
