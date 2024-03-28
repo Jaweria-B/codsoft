@@ -47,6 +47,8 @@ def main():
     st.set_page_config(page_title="Rock-Paper-Scissors", page_icon="./assets/rock-paper-scissors.png")  # Set page title and icon
     st.title("Rock-Paper-Scissors Game")
 
+    st.image("./assets/paper.png")
+
     # First row: User's choice and computer's choice
     col1, col2 = st.columns(2)
     user_choice = col1.radio(f"### Your Choice: 👤", ["rock", "paper", "scissors"], key="user_choice")
