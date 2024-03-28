@@ -1,6 +1,7 @@
 import streamlit as st
 import random
 import time
+import os
 
 # Function to read images from the directory
 def read_images_from_dir(directory):
