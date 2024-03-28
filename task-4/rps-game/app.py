@@ -3,10 +3,26 @@ import random
 import time
 
 # Dictionary containing image paths for each choice
+imgs = {
+    "rock": "./assets/rock.png",      
+    "paper": "./assets/paper.png",     
+    "scissors": "./assets/scissors.png"   
+}
+
+# Function to read image files
+def read_image_file(image_path):
+    with open(image_path, "rb") as file:
+        return file.read()
+
+# Read all image files and store them separately
+rock_image = read_image_file(imgs["rock"])
+paper_image = read_image_file(imgs["paper"])
+scissors_image = read_image_file(imgs["scissors"])
+
 images = {
-    "rock": "/assets/rock.png",      
-    "paper": "/assets/paper.png",     
-    "scissors": "/assets/scissors.png"   
+    "rock": rock_image,
+    "paper": paper_image,
+    "scissors": scissors_image
 }
 
 # Initialize session state for scores
