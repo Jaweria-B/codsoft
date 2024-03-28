@@ -120,3 +120,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    st.divider()
+    st.write(
+            """
+            Made with :book: By **_Jaweria Batool_** 
+            """
+        )
+
+    # link to GitHub README file
+    st.write("For more information about how the app works, please check out the [GitHub README](https://github.com/Jaweria-B/codsoft/tree/main/task-5/contact-book) file.")
