@@ -4,9 +4,9 @@ import time
 
 # Dictionary containing image paths for each choice
 imgs = {
-    "rock": "./assets/rock.png",      
-    "paper": "./assets/paper.png",     
-    "scissors": "./assets/scissors.png"   
+    "rock": "/assets/rock.png",      
+    "paper": "/assets/paper.png",     
+    "scissors": "/assets/scissors.png"   
 }
 
 # Function to read image files
