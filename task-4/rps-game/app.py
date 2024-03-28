@@ -2,46 +2,46 @@ import streamlit as st
 import random
 import time
 
-# Dictionary containing image paths for each choice
-imgs = {
-    "rock": "/assets/rock.png",      
-    "paper": "/assets/paper.png",     
-    "scissors": "/assets/scissors.png"   
-}
+# # Dictionary containing image paths for each choice
+# imgs = {
+#     "rock": "/assets/rock.png",      
+#     "paper": "/assets/paper.png",     
+#     "scissors": "/assets/scissors.png"   
+# }
 
-# Function to read image files
-def read_image_file(image_path):
-    with open(image_path, "rb") as file:
-        return file.read()
+# # Function to read image files
+# def read_image_file(image_path):
+#     with open(image_path, "rb") as file:
+#         return file.read()
 
-# Read all image files and store them separately
-rock_image = read_image_file(imgs["rock"])
-paper_image = read_image_file(imgs["paper"])
-scissors_image = read_image_file(imgs["scissors"])
+# # Read all image files and store them separately
+# rock_image = read_image_file(imgs["rock"])
+# paper_image = read_image_file(imgs["paper"])
+# scissors_image = read_image_file(imgs["scissors"])
 
-images = {
-    "rock": rock_image,
-    "paper": paper_image,
-    "scissors": scissors_image
-}
+# images = {
+#     "rock": rock_image,
+#     "paper": paper_image,
+#     "scissors": scissors_image
+# }
 
-# Initialize session state for scores
-if 'user_score' not in st.session_state:
-    st.session_state.user_score = 0
-if 'computer_score' not in st.session_state:
-    st.session_state.computer_score = 0
+# # Initialize session state for scores
+# if 'user_score' not in st.session_state:
+#     st.session_state.user_score = 0
+# if 'computer_score' not in st.session_state:
+#     st.session_state.computer_score = 0
 
-def determine_winner(user_choice, computer_choice):
-    if user_choice == computer_choice:
-        st.warning("It's a tie! 😊")
-    elif (user_choice == 'rock' and computer_choice == 'scissors') or \
-         (user_choice == 'scissors' and computer_choice == 'paper') or \
-         (user_choice == 'paper' and computer_choice == 'rock'):
-        st.success("You win! 🎉")
-        st.session_state.user_score += 1
-    else:
-        st.error("You lose! 😔")
-        st.session_state.computer_score += 1
+# def determine_winner(user_choice, computer_choice):
+#     if user_choice == computer_choice:
+#         st.warning("It's a tie! 😊")
+#     elif (user_choice == 'rock' and computer_choice == 'scissors') or \
+#          (user_choice == 'scissors' and computer_choice == 'paper') or \
+#          (user_choice == 'paper' and computer_choice == 'rock'):
+#         st.success("You win! 🎉")
+#         st.session_state.user_score += 1
+#     else:
+#         st.error("You lose! 😔")
+#         st.session_state.computer_score += 1
 
 def main():
     st.set_page_config(page_title="Rock-Paper-Scissors", page_icon="./assets/rock-paper-scissors.png")  # Set page title and icon
@@ -49,41 +49,41 @@ def main():
 
     st.image("./assets/paper.png")
 
-    # First row: User's choice and computer's choice
-    col1, col2 = st.columns(2)
-    user_choice = col1.radio(f"### Your Choice: 👤", ["rock", "paper", "scissors"], key="user_choice")
+    # # First row: User's choice and computer's choice
+    # col1, col2 = st.columns(2)
+    # user_choice = col1.radio(f"### Your Choice: 👤", ["rock", "paper", "scissors"], key="user_choice")
     
-    with col2:
-        if user_choice:
-            st.markdown(f"### Computer's Choice: 🤖")
-            with st.spinner("Loading..."):
-                time.sleep(1)  # Simulating image loading delay
-                computer_choice = random.choice(['rock', 'paper', 'scissors'])
-                col2.markdown(f"* ### <span style='color:white'>{computer_choice.title()}</span>", unsafe_allow_html=True)
+    # with col2:
+    #     if user_choice:
+    #         st.markdown(f"### Computer's Choice: 🤖")
+    #         with st.spinner("Loading..."):
+    #             time.sleep(1)  # Simulating image loading delay
+    #             computer_choice = random.choice(['rock', 'paper', 'scissors'])
+    #             col2.markdown(f"* ### <span style='color:white'>{computer_choice.title()}</span>", unsafe_allow_html=True)
 
-    # Second row: Image cards for user's and computer's choices
-    st.write("Comparision")
-    col1, col2 = st.columns(2)
-    if user_choice:
-        with st.spinner("Loading..."):
-            time.sleep(1)  # Simulating image loading delay
-            col1.image(images[user_choice], caption="Your Choice", use_column_width=True)
-            col2.image(images[computer_choice], caption="Computer's Choice", use_column_width=True, width=150 )
+    # # Second row: Image cards for user's and computer's choices
+    # st.write("Comparision")
+    # col1, col2 = st.columns(2)
+    # if user_choice:
+    #     with st.spinner("Loading..."):
+    #         time.sleep(1)  # Simulating image loading delay
+    #         col1.image(images[user_choice], caption="Your Choice", use_column_width=True)
+    #         col2.image(images[computer_choice], caption="Computer's Choice", use_column_width=True, width=150 )
 
-    # Third row: Result of the game
-    st.write("#### Result")
-    if user_choice:
-        determine_winner(user_choice, computer_choice)
+    # # Third row: Result of the game
+    # st.write("#### Result")
+    # if user_choice:
+    #     determine_winner(user_choice, computer_choice)
 
-    # Fourth row: Scores and Play Again button
-    st.write("#### Scores:")
-    st.write(f"Your Score: {st.session_state.user_score} 🏆")
-    st.write(f"Computer's Score: {st.session_state.computer_score} 💻")
+    # # Fourth row: Scores and Play Again button
+    # st.write("#### Scores:")
+    # st.write(f"Your Score: {st.session_state.user_score} 🏆")
+    # st.write(f"Computer's Score: {st.session_state.computer_score} 💻")
 
-    play_again = st.button("Play Again")
-    if play_again:
-        st.session_state.user_score = 0
-        st.session_state.computer_score = 0
+    # play_again = st.button("Play Again")
+    # if play_again:
+    #     st.session_state.user_score = 0
+    #     st.session_state.computer_score = 0
 
 if __name__ == "__main__":
     main()
